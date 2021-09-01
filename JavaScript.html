@@ -7,13 +7,20 @@
 
 <body>
   <h1><a href="JavaScript.html">JavaScript</a></h1>
-  <input type="button" value="night" onclick="
+
+  <input id="MODE" type="button" value="darkMode" onclick="
+
+  if(document.querySelector('#MODE').value==='darkMode'){
   document.querySelector('body').style.backgroundColor= 'black';
   document.querySelector('body').style.color = 'white';
-  ">
-  <input type="button" value="day" onclick="
+  document.querySelector('#MODE').value = 'lightMode';
+
+} else  {
   document.querySelector('body').style.backgroundColor= 'white';
   document.querySelector('body').style.color = 'black';
+  document.querySelector('#MODE').value = 'darkMode';
+  id = lightMode;
+  }
   ">
 
 <ol>
