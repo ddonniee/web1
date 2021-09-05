@@ -12,6 +12,44 @@
   gtag('js', new Date());
 
   gtag('config', 'G-BGSKB18BXG');
+
+  var Links = {
+    setColor:function (color) {
+      var alist = document.querySelectorAll('a');
+        var i = 0;
+          while(i<alist.length) {
+          alist[i].style.color = color;
+          i=i+1;
+          }
+    }
+  }
+  var Body = {
+    setColor:function(color) {
+      document.querySelector('body').style.color = color;
+    },
+    setBackgroundColor(color) {
+      document.querySelector('body').style.backgroundColor= color;
+    }
+  }
+
+  function ModerController(self)   {
+
+    var target = document.querySelector('body');
+          if(self.value==='DarkMode'){
+          Body.setBackgroundColor('black');
+          Body.setColor('white');
+          self.value = 'LightMode';
+
+          Links.setColor('powderblue');
+    } else  {
+          Body.setColor('black');
+          Body.setBackgroundColor('white');
+          self.value = 'DarkMode';
+
+          Links.setColor('blue');
+      }
+    }
+
 </script>
 
 </head>
@@ -19,19 +57,9 @@
 <body>
   <h1><a href="Analystic.google.html">Analytics</a></h1>
 
-  <input id="MODE" type="button" value="darkMode" onclick="
+  <input id="MODE" type="button" value="DarkMode" onclick="
 
-  if(document.querySelector('#MODE').value==='darkMode'){
-  document.querySelector('body').style.backgroundColor= 'black';
-  document.querySelector('body').style.color = 'white';
-  document.querySelector('#MODE').value = 'lightMode';
-
-} else  {
-  document.querySelector('body').style.backgroundColor= 'white';
-  document.querySelector('body').style.color = 'black';
-  document.querySelector('#MODE').value = 'darkMode';
-  id = lightMode;
-  }
+  ModerController(this);
   ">
 
 <ol>

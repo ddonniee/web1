@@ -7,20 +7,50 @@
 
 <body>
 <h1><a href="CSS.html">CSS</a></h1>
+<script>
 
-<input id="MODE" type="button" value="darkMode" onclick="
-
-if(document.querySelector('#MODE').value==='darkMode'){
-document.querySelector('body').style.backgroundColor= 'black';
-document.querySelector('body').style.color = 'white';
-document.querySelector('#MODE').value = 'lightMode';
-
-} else  {
-document.querySelector('body').style.backgroundColor= 'white';
-document.querySelector('body').style.color = 'black';
-document.querySelector('#MODE').value = 'darkMode';
-id = lightMode;
+var Links = {
+  setColor:function (color) {
+    var alist = document.querySelectorAll('a');
+      var i = 0;
+        while(i<alist.length) {
+        alist[i].style.color = color;
+        i=i+1;
+        }
+  }
 }
+var Body = {
+  setColor:function(color) {
+    document.querySelector('body').style.color = color;
+  },
+  setBackgroundColor(color) {
+    document.querySelector('body').style.backgroundColor= color;
+  }
+}
+
+function ModerController(self)   {
+
+  var target = document.querySelector('body');
+        if(self.value==='DarkMode'){
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        self.value = 'LightMode';
+
+        Links.setColor('powderblue');
+  } else  {
+        Body.setColor('black');
+        Body.setBackgroundColor('white');
+        self.value = 'DarkMode';
+
+        Links.setColor('blue');
+    }
+  }
+
+</script>
+
+<input type="button" value="DarkMode" onclick="
+
+ModerController(this);
 ">
 
 <ol>
@@ -32,11 +62,14 @@ id = lightMode;
 </ol>
 
 <h2>CSS</h2>
-<p>
+
 <img src="css.jpg" width="85%">
-
-CSS
-
+<p>
+CSS is among the core languages of the open web and is standardized across Web browsers
+according to+<a href="https://www.w3.org/Style/CSS/#specs">W3C specifications.</a> Previously, development of various parts of CSS specification was done synchronously,
+ which allowed versioning of the latest recommendations. You might have heard about CSS1, CSS2.1, CSS3. However, CSS4 has never become an official version.
 </p>
+
+
 </body>
 </html>
