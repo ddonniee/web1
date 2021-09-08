@@ -1,0 +1,32 @@
+Welcome to donnie's game land!
+
+insert your ID :
+if(yourID==IDs[i]) {
+   insert your PW :
+}else {
+   Not signed in!
+
+   Do you want to be my friend ?
+
+   inset your choice;
+   if(choice==1) {
+
+   inset yourID ;
+
+   var cnt = numOfmine.lenght;
+
+   for(int i=0; i<cnt; i++) {
+      if(yourID==numOfmine[i]) {
+      pls check anotherID
+      } else {
+        cnt++;
+        numOfmine[cnt]=yourID;
+
+        insert yourPW;
+
+        numOfmine_pw[cnt]=yourPW;
+
+      }
+   }
+   }
+}
